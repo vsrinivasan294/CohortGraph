@@ -21,21 +21,24 @@
       <li class="nav-item">
         <a class="nav-link" href="http://dashboard.athelas.com/unlabeled_jobs.html">Unlabeled Jobs</a>
       </li>
-
+       <li class="nav-item">
+        <a class="nav-link" href="file:///C:/Users/hari/Desktop/GraphAthelas/list.html">Searchable User List</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="file:///C:/Users/hari/Desktop/GraphAthelas/cohort.html">Cohort Graph</a>
+      </li>
     </ul>
   </div>
 
 </nav>
 <section class="main">
-     
-
 <div class="dropdown"> <!--Dropdown Menu for the paitent records and individual data-->
-<button onclick="myFunction()" class="dropbtn" >List of Users</button>
+<button onclick="myFunction()" class="dropbtn" >Data Points on this graph</button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="http://dashboard.athelas.com/clinic/user.html?name=1" target="_blank">1</a>
-    <a href="http://dashboard.athelas.com/clinic/user.html?name=2" target="_blank">2</a>
-    <a href="http://dashboard.athelas.com/clinic/user.html?name=101" target="_blank">101</a>
-    <a href="http://dashboard.athelas.com/clinic/user.html?name=001_test_trial" target="_blank">001_test_trial</a>
+    <a>1</a>
+    <a>2</a>
+    <a>101</a>
+    <a>001_test_trial</a>
   </div>
 </div>
 <body>
@@ -86,7 +89,6 @@ var chart = new Chart(ctx, {
     },
     options: {}
 });
-
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -108,7 +110,7 @@ window.onclick = function(event) {
 </script>
 
 
-<table style="width:100%">
+<table >
 
   <tr>
     <th>Paitent</th>
@@ -129,7 +131,7 @@ window.onclick = function(event) {
     <td>WBC: 7 | N: 65.28925619834712% | L: 34.710743801652896%</td>
   </tr>
  <tr>
-    <td>001_test_trial's History</td>
+    <td>001_test_trial</td>
     <td>--</td>
     <td>--</td>
     <td>--</td>
@@ -182,6 +184,9 @@ th, td {
 .dropdown {
     position: relative;
     display: inline-block;
+    text-align: center;
+    display: flex;
+  justify-content: center;
 }
 
 .dropdown-content {
@@ -204,16 +209,6 @@ th, td {
 .dropdown a:hover {background-color: #f1f1f1}
 
 .show {display:block;}
-
-
-body {
-    background: #f7f7f7;
-    color: #404040;
-    font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    font-weight: normal;
-    line-height: 20px;
-}
 
 a {
     color: #1e7ad3;

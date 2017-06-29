@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+
+<nav class="navbar navbar-toggleable-md navbar-light">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="http://dashboard.athelas.com/"><img src="https://athelas.com/assets/images/logos/athelas-logo-new.png" style="height:15px; margin-top:15px; margin-bottom:15px"/>
+</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="http://dashboard.athelas.com/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://dashboard.athelas.com/unlabeled_jobs.html">Unlabeled Jobs</a>
+      </li>
+
+    </ul>
+  </div>
+
+</nav>
+<section class="main">
+     
+
+<div class="dropdown"> <!--Dropdown Menu for the paitent records and individual data-->
+<button onclick="myFunction()" class="dropbtn" >List of Users</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="http://dashboard.athelas.com/clinic/user.html?name=1" target="_blank">1</a>
+    <a href="http://dashboard.athelas.com/clinic/user.html?name=2" target="_blank">2</a>
+    <a href="http://dashboard.athelas.com/clinic/user.html?name=101" target="_blank">101</a>
+    <a href="http://dashboard.athelas.com/clinic/user.html?name=001_test_trial" target="_blank">001_test_trial</a>
+  </div>
+</div>
+<body>
+<canvas id="myChart" width="200" height="150">
+</canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" />
+<script src="js/main.js"></script>
+</body>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d'); <!--The building and initiating of the graph-->
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["Test1,", "Test2"],
+        datasets: [{ 
+            label: "2's History",
+	    fill: false,
+            backgroundColor: 'rgb(227, 50, 50)',
+            borderColor: 'rgb(227, 50, 50)',
+            data: [4],
+        },
+	{ 
+            label: "001_test_trial's History",
+ 	    fill: false,
+            backgroundColor: 'rgb(0, 255, 128)',
+            borderColor: 'rgb(0, 255, 128)',
+            data: [0],
+        },
+		{ 
+            label: "101's History",
+ 	    fill: false,
+            backgroundColor: 'rgb(205, 199, 132)',
+            borderColor: 'rgb(205, 199, 132)',
+            data: [7],
+        },
+		{ 
+            label: "1's History",
+ 	    fill: false,
+            backgroundColor: 'rgb(65, 105, 225)',
+            borderColor: 'rgb(65, 105, 225)',
+            data: [7, 3],
+        }
+
+]
+    },
+    options: {}
+});
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+<table style="width:100%">
+
+  <tr>
+    <th>Paitent</th>
+    <th>JOB ID</th>
+    <th>Time</th>
+    <th>WBC Count</th>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>3494</td>
+    <td>Fri Jun 23 2017 18:55:23 GMT-0700 (Pacific Daylight Time)</td>
+    <td>WBC: 4 | N: 57.8125% | L: 42.1875%</td>
+  </tr>
+  <tr>
+     <td>101</td>
+    <td>3581</td>
+    <td>Tue Jun 27 2017 11:18:20 GMT-0700 (Pacific Daylight Time)</td>
+    <td>WBC: 7 | N: 65.28925619834712% | L: 34.710743801652896%</td>
+  </tr>
+ <tr>
+    <td>001_test_trial's History</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>3587</td>
+    <td>Tue Jun 27 2017 15:13:05 GMT-0700 (Pacific Daylight Time)</td>
+    <td>--</td>
+  </tr>
+   <tr>
+    <td>1</td>
+    <td>3493</td>
+    <td>Fri Jun 23 2017 18:45:28 GMT-0700 (Pacific Daylight Time)</td>
+    <td>WBC: 3 | N: 54.929577464788736% | L: 45.07042253521127%</td>
+  </tr>
+   <tr>
+    <td>1</td>
+    <td>3580</td>
+    <td>Tue Jun 27 2017 10:35:10 GMT-0700 (Pacific Daylight Time)</td>
+    <td>WBC: 7 | N: 45.13274336283185% | L: 54.86725663716814%</td>
+  </tr>
+</table>
+
+
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+.dropbtn {
+    background-color: #71acd6;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #7ec0ee;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+
+body {
+    background: #f7f7f7;
+    color: #404040;
+    font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+a {
+    color: #1e7ad3;
+    text-decoration: none;
+}
+
+a:hover { text-decoration: underline }
+
+.container, .main {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+}
+
+.main { margin-top: 50px;
+ }
+
+</style>
+</head>
+</html>
